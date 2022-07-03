@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .tab {
+        overflow: hidden;
+        }
+        .tab button {
+            background-color: inherit;
+            color: blue;
+            float: left;
+            border: 1px solid lightgray;
+            cursor: pointer;
+            padding: 18px 20px;
+            font-size: 18px;
+        }
+        .tab button.active {
+            color:black;
+            border-bottom: none;
+        }
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid lightgray;
+            border-top: none;
+        }
+        pre{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="openPage(event, 'Home')">Home</button>
+        <button class="tablinks" onclick="openPage(event, 'Profile')">Profile</button>
+        <button class="tablinks" onclick="openPage(event, 'Contact')">Contact</button>
+    </div>
+    <div id="Home" class="tabcontent">
+        <h2>Home Page...</h2>
+        <pre>Video provides a powerful way to help you prove your point.
+When you click Online Video, you can paste in the embed code for the video you want to add. 
+You can also type a keyword to search online for the video that best fits your document.</pre>
+    </div>
+    <div id="Profile" class="tabcontent">
+        <h2>Profile Page...</h2>
+        <pre>Video provides a powerful way to help you prove your point.
+When you click Online Video,you can paste in the embed code for the video you want to add.
+You can also type a keyword to search online for the video that best fits your document.</pre> 
+    </div>
+    <div id="Contact" class="tabcontent">
+        <h2>Contact Page...</h2>
+        <pre>Video provides a powerful way to help you prove your point. 
+When you click Online Video, you can paste in the embed code for the video you want to add.
+You can also type a keyword to search online for the video that best fits your document.</pre>
+    </div>
+<script>
+    function openPage(even, pages) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(pages).style.display = "block";
+        even.currentTarget.className += " active";
+        }
+</script>
+</body>
+</html>
+
